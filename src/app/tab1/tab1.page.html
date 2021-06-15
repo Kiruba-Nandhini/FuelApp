@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+
+
+
+  <ion-label>{{'Tab1.Select Language'|translate}}</ion-label>
+  <ion-select [(ngModel)]="selectedLanguage" (ionChange)="languageChanged()">
+    <ion-select-option value="en">English</ion-select-option>
+    <ion-select-option value="tam">தமிழ்</ion-select-option>
+  </ion-select>
+
+  <ion-input placeholder="{{'Tab1.enter month in integer' | translate}}" [(ngModel)]="numbers"></ion-input>
+  <ion-button (click)="num(numbers)">{{'Tab1.GET MONTH DETAILS'| translate}}</ion-button>
+  <ion-card>
+    <ion-label><b>{{'Tab1.TOTAL FOR MONTH:'| translate}}</b></ion-label>
+    {{totalList}}<br>
+    <ion-label><b>{{'Tab1.TOTAL FUEL USED:' | translate}}</b></ion-label>
+    {{fuelVol}}<br>
+  </ion-card>
+  <br>
+  <ion-card>
+    <ion-label><b>{{'Tab1.AVERAGE AMOUNT SPENT:'| translate}}</b></ion-label>
+    {{avgAmount}}
+    <br>
+    <ion-label><b>{{'Tab1.AVERAGE MILEAGE:'| translate}}</b></ion-label>
+    {{odoList | number : '1.2-2'}}
+  </ion-card>
+
+  <ion-refresher slot="fixed" (ionRefresh)="getApi($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content pullingIcon="arrow-down-outline" pullingText="Pull to refresh" refreshingSpinner="crescent"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let users of httpList">
+    <ion-label><b>{{'API.ID'|translate}}:</b>{{users.id}}</ion-label><br>
+    <ion-label><b>{{'API.DATE' |translate}} :</b>{{users.Date }}</ion-label> <br>
+    <ion-label><b>{{'API.ODOMETER' | translate}}:</b>{{users.OdometerInKm}}</ion-label><br>
+    <ion-label><b>{{'API.FUEL VOLUME'|translate}}:</b>{{users.VolumeInLitres}}</ion-label> <br>
+    <ion-label><b>{{'API.FUEL PRICE' |translate }}:</b>{{users.FuelPriceInLitre}}</ion-label><br>
+    <ion-label><b>{{'API.TOTAL_AVG' | translate}}:</b>{{users.total | number : '1.2-2'}}</ion-label>
+  </ion-card>
+
+  <div>
+    <ion-card *ngFor="let i of row_data">
+      {{'Card.DATE'|translate }}: {{i.Date |date:"YYYY-MM-dd"}}<br>
+      {{'Card.ODOMETER'| translate}}: {{i.Odometer}}<br>
+      {{'Card.FUELVOLUME' |translate}}: {{i.FuelVolume}}<br>
+      {{'Card.FUELPRICE'| translate}}: {{i.FuelPrice}}<br>
+      {{'Card.TOTALCOST' |translate}}: {{i.TotalCost}}<br>
+      {{'FUELDETAILS.bunk'|translate}}: {{i.BunkName}}<br>
+      {{'FUELDETAILS.lat'|translate}}: {{i.latitude}}<br>
+      {{'FUELDETAILS.long'|translate}}:{{i.longitude}}
+
+    </ion-card>
+  </div>
+</ion-content>

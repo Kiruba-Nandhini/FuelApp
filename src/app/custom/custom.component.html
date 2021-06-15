@@ -1,0 +1,27 @@
+<ion-content>
+
+
+  <ion-button (click)="add_data()">{{'Tab2.GETDATA'|translate}}</ion-button>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="fuelPage()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div>
+    <ion-card *ngFor="let i of row_data">
+      {{'Card.DATE'|translate }}: {{i.Date |date:"YYYY-MM-dd"}}<br>
+      {{'Card.ODOMETER'| translate}}: {{i.Odometer}}<br>
+      {{'Card.FUELVOLUME' |translate}}: {{i.FuelVolume}}<br>
+      {{'Card.FUELPRICE'| translate}}: {{i.FuelPrice}}<br>
+      {{'Card.TOTALCOST' |translate}}: {{i.TotalCost}}<br>
+      {{'FUELDETAILS.bunk'|translate}}: {{i.BunkName}}<br>
+      {{'FUELDETAILS.lat'|translate}}: {{i.latitude}}<br>
+      {{'FUELDETAILS.long'|translate}}:{{i.longitude}}
+    </ion-card>
+  </div>
+
+
+
+</ion-content>

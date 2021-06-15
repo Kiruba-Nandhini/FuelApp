@@ -1,0 +1,46 @@
+{
+  "Tab1": {
+    "Dashboard":"Dashboard",
+    "Select Language":"Select Language",
+    "enter month in integer":"enter month in integer",
+    "GET MONTH DETAILS":"GET MONTH DETAILS",
+    "TOTAL FOR MONTH:":"TOTAL FOR MONTH:",
+    "TOTAL FUEL USED:": "TOTAL FUEL USED:",
+    "AVERAGE AMOUNT SPENT:":"AVERAGE AMOUNT SPENT:",
+    "AVERAGE MILEAGE:":"AVERAGE MILEAGE:"
+  },
+  "Tab2":{
+    "Fuel":"Fuel",
+    "GETDATA":"GETDATA"
+},
+"FUELDETAILS":{
+  "Add Fuel Filling Details":"Add Fuel Filling Details",
+  "DatePicker":"DatePicker",
+  "Odometer(km)":"Odometer(km)",
+  "Fuel Volume":"Fuel Volume",
+  "Fuel Price":"Fuel Price",
+  "Total Cost": "Total Cost",
+  "ADD":"ADD",
+  "BunkName":"Enter Petrol Bunk Name",
+  "GetBunk":"GET Bunk Location",
+  "lat":"Lattidude",
+  "long":"Longitude",
+  "bunk":"Bunk Name"
+},
+"Card":{
+  "DATE": "DATE",
+  "ODOMETER":"ODOMETER",
+  "FUELVOLUME": "FUELVOLUME",
+  "FUELPRICE":"FUELPRICE",
+  "TOTALCOST": "TOTALCOST"
+},
+"API":{
+  "ID":"ID",
+  "DATE":"DATE",
+"ODOMETER":"ODOMETER",
+"FUEL VOLUME":"VOLUME",
+"FUEL PRICE":"FUELPRICE",
+"TOTAL_AVG":"TOTAL_AVG"
+}
+
+}

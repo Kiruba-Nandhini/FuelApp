@@ -1,0 +1,29 @@
+.fontSize {
+  font-size: x-large;
+  font-weight: 300;
+  color: white;
+  background: rgba(56, 56, 58);
+}
+ion-label {
+  font-weight: bold;
+  color:white;
+
+}
+ion-input,
+ion-datetime {
+  color: white;
+}
+.card {
+  border-radius: 15px;
+
+  background: rgb(56, 56, 58);
+}
+ion-content {
+  --background: rgb(97, 94, 94);
+}
+
+.button {
+  margin-inline: 16px;
+}
+
+

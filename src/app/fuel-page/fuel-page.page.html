@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-grid class="fontSize">
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="arrow-back-outline" size="large" (click)="back()"></ion-icon>
+        </ion-col>&nbsp;
+        <ion-col>
+          <span>{{'FUELDETAILS.Add Fuel Filling Details'|translate}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid class="container">
+    <form [formGroup]="userNote" (ngSubmit)="add()">
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-label position="fixed">{{'FUELDETAILS.DatePicker'|translate}}</ion-label>
+          <ion-input [(ngModel)]="date" type="date" formControlName="date"></ion-input>
+          <ion-label position="fixed">{{'FUELDETAILS.Odometer(km)'|translate}}</ion-label>
+          <ion-input formControlName="Odometer" [(ngModel)]="odometer" type="tel"
+            (keypress)="numberOnlyValidation($event)"></ion-input>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-label position="fixed">{{'FUELDETAILS.Fuel Volume'|translate}}</ion-label>
+          <ion-input formControlName="FuelVolume" type="tel" [(ngModel)]="volume"
+            (keypress)="numberOnlyValidation($event)"></ion-input>
+          <ion-label position="fixed">{{'FUELDETAILS.Fuel Price'|translate}}</ion-label>
+          <ion-input formControlName="fuelPrice" type="tel" [(ngModel)]="price"
+            (keypress)="numberOnlyValidation($event)"></ion-input>
+          <ion-label position="fixed">{{'FUELDETAILS.Total Cost'|translate}}</ion-label>
+          <ion-input formControlName="Cost" type="tel" [(ngModel)]="cost" (click)="getCost()"></ion-input>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-label position="fixed">{{'FUELDETAILS.BunkName'|translate}}</ion-label>
+          <ion-input [(ngModel)]="bunkName" type="text" formControlName="BunkName"></ion-input>
+          <ion-button (click)="getBunkLoc()">{{'FUELDETAILS.GetBunk'|translate}}</ion-button>
+          <div>
+            <ion-item>
+              <ion-label position="fixed">{{'FUELDETAILS.lat' |translate}}</ion-label>
+              <ion-input style="color: black;" readonly formControlName="lat" [(ngModel)]="currentLatitude"></ion-input>
+              <br>
+
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">{{'FUELDETAILS.long' |translate}}</ion-label>
+              <ion-input style="color: black;" readonly formControlName="long" [(ngModel)]="currentLongitude">
+              </ion-input><br>
+
+            </ion-item>
+          </div>
+
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button class="button" expand="block" [disabled]="userNote.invalid" (click)="add()">
+        {{'FUELDETAILS.ADD'|translate}}</ion-button>
+
+
+    </form>
+
+  </ion-grid>
+
+
+</ion-content>
